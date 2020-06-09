@@ -5,7 +5,7 @@ const connect = require('../lib/utils/connect');
 
 const request = require('supertest');
 const app = require('../lib/app');
-const Organization = require('../lib/models/Organization')
+//const Organization = require('../lib/models/Organization');
 
 describe('organization routes', () => {
   beforeAll(async() => {
@@ -27,10 +27,18 @@ describe('organization routes', () => {
       .post('api/v1/organizations')
       .send({
         name: 'Alchemy',
-        _id: 337,
-        imageUrl:  ,
         description: 'software development school',
+        imageUrl: 'url'  ,
       })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.anything(),
+          name: 'Alchemy',
+          description: 'software development school',
+          imageUrl:'url',
+          __v: 0
+        });
+      });
   });
 });
 
