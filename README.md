@@ -19,7 +19,7 @@ a title, description, and imageUrl.
 
 ### User
 
-Created routes for the `User` model. The`User` model should include a name, phone, email, communicationMedium (phone or email), and imageUrl.
+[x]Created routes for the `User` model. The`User` model should include a name, phone, email, communicationMedium (phone or email), and imageUrl.
 
 [ ] get by id route will be used to get details about a user
 [ ] update route will be used to update a user
