@@ -54,8 +54,7 @@ describe('organization routes', () => {
           name: 'Alchemy',
           description: 'software development school',
           imageUrl: 'url',
-          __v: 0,
-        
+          __v: 0,   
         }]);
       });
   });
