@@ -24,11 +24,11 @@ describe('organization routes', () => {
 
   it('creates an organization via POST', () => {
     return request(app)
-      .post('api/v1/organizations')
+      .post('/api/v1/organization')
       .send({
         name: 'Alchemy',
         description: 'software development school',
-        imageUrl: 'url'  ,
+        imageUrl: 'url'  
       })
       .then(res => {
         expect(res.body).toEqual({
