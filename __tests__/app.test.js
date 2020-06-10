@@ -5,7 +5,7 @@ const connect = require('../lib/utils/connect');
 
 const request = require('supertest');
 const app = require('../lib/app');
-//const Organization = require('../lib/models/Organization');
+const Organization = require('../lib/models/Organization');
 
 describe('organization routes', () => {
   beforeAll(async() => {
@@ -40,6 +40,23 @@ describe('organization routes', () => {
         });
       });
   });
+
+  it('it gets all organizations via GET', () => {
+    return Organization.create({
+      name: 'Alchemy',
+      description: 'software development school',
+      imageUrl: 'url'
+    })
+      .then(() => request(app).get('/api/v1/organization'))
+      .then(res => {
+        expect(res.body).toEqual([{
+          _id: expect.anything(),
+          name: 'Alchemy',
+          description: 'software development school',
+          imageUrl: 'url',
+          __v: 0,
+        
+        }]);
+      });
+  });
 });
-
-
