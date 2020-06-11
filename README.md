@@ -11,8 +11,8 @@ For Phase 1 we will concentrate on the `Organization` and `User` model.
 Created all CRUD routes for the `Organization` model and `Organization` model will include
 a title, description, and imageUrl.
 
-[ ] create route will be used when a new organization is created
-[ ] get all route will be used to see all organizations (_id, title, and imageUrl of organization only)
+[x] create route will be used when a new organization is created
+[x] get all route will be used to see all organizations (_id, title, and imageUrl of organization only)
 [ ] get by id route will be used to get details about an organization
 [ ] update route will be used to update organization information
 [ ] delete route will be used if an organization is disbanded

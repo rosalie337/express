@@ -58,4 +58,22 @@ describe('organization routes', () => {
         }]);
       });
   });
+
+  it('it gets an organization by id via GET', () => {
+    return Organization.create({
+      name: 'Alchemy',
+      description: 'software development school',
+      imageUrl: 'url'
+    })
+      .then(organization => request(app).get('/api/v1/organization/${pizza._id}'))
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.anything(),
+          name: 'Alchemy',
+          description: 'software development school',
+          imageUrl: 'url',
+          __v: 0,  
+        });
+      });
+  });
 });
