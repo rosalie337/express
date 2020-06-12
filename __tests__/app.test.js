@@ -65,7 +65,7 @@ describe('organization routes', () => {
       description: 'software development school',
       imageUrl: 'url'
     })
-      .then(organization => request(app).get('/api/v1/organization/${pizza._id}'))
+      .then(organization => request(app).get(`/api/v1/organization/${organization._id}`))
       .then(res => {
         expect(res.body).toEqual({
           _id: expect.anything(),
@@ -76,4 +76,27 @@ describe('organization routes', () => {
         });
       });
   });
+
+  it('it updates an organization by id via PATCH', () => {
+    return Organization.create({
+      name: 'Alchemy',
+      description: 'software development school',
+      imageUrl: 'url'
+    })
+      .then(organization =>{
+        return request(app)
+          .patch(`/api/v1/organization/${organization._id}`)
+          .send({ name: 'Alchemy Code Lab', description: 'code school' });
+      })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.anything(),
+          name: 'Alchemy Code Lab',
+          description: 'code school',
+          imageUrl: 'url',
+          __v: 0,  
+        });
+      });
+  });
+
 });

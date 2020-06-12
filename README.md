@@ -13,8 +13,8 @@ a title, description, and imageUrl.
 
 [x] create route will be used when a new organization is created
 [x] get all route will be used to see all organizations (_id, title, and imageUrl of organization only)
-[ ] get by id route will be used to get details about an organization
-[ ] update route will be used to update organization information
+[x] get by id route will be used to get details about an organization
+[x] update route will be used to update organization information
 [ ] delete route will be used if an organization is disbanded
 
 ### User
