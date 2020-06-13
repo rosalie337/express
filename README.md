@@ -15,15 +15,15 @@ a title, description, and imageUrl.
 [x] get all route will be used to see all organizations (_id, title, and imageUrl of organization only)
 [x] get by id route will be used to get details about an organization
 [x] update route will be used to update organization information
-[ ] delete route will be used if an organization is disbanded
+[x] delete route will be used if an organization is disbanded
 
 ### User
 
 [x]Created routes for the `User` model. The`User` model should include a name, phone, email, communicationMedium (phone or email), and imageUrl.
 
-[ ] get by id route will be used to get details about a user
-[ ] update route will be used to update a user
-[ ] delete route will be used if a user chooses to leave the platform
+[x] get by id route will be used to get details about a user
+[x] update route will be used to update a user
+[x] delete route will be used if a user chooses to leave the platform
 
 ## Testing
 
