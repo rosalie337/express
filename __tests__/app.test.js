@@ -98,5 +98,21 @@ describe('organization routes', () => {
         });
       });
   });
-
+  it('it deletes an organization via DELETE', () => {
+    return Organization.create({
+      name: 'Alchemy',
+      description: 'software development school',
+      imageUrl: 'url'
+    })
+      .then(organization => request(app).delete(`/api/v1/organization/${organization._id}`))
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.anything(),
+          name: 'Alchemy',
+          description: 'software development school',
+          imageUrl: 'url',
+          __v: 0,  
+        });
+      });
+  });
 });
