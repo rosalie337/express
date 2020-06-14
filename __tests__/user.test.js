@@ -61,9 +61,55 @@ describe('organization routes', () => {
           phoneType: 'mobile',
           phoneNumber: 5035555555,
           image: 'some.string',
-          __v: 0,
+          __v: 0
         }]);
       });
   });
- 
+  it('it updates a user via PATCH', () => {
+    return User.create({
+      name: 'Student',
+      password: '12345',
+      phoneType: 'mobile',
+      phoneNumber: 5035555555,
+      image: 'some.string',
+    })
+      .then(user => {
+        return request(app)
+          .patch(`/api/v1/user/${user._id}`)
+          .send({ name: 'Teacher',
+            phoneNumber: 9715555555 });
+      })
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.anything(),
+          name: 'Teacher',
+          password: '12345',
+          phoneType: 'mobile',
+          phoneNumber: 9715555555,
+          image: 'some.string',
+          __v: 0
+        });
+      });
+  });
+  it('it deletes a user via DELETE', () => {
+    return User.create({
+      name: 'Student',
+      password: '12345',
+      phoneType: 'mobile',
+      phoneNumber: 5035555555,
+      image: 'some.string',
+    })
+      .then(user => request(app).delete(`/api/v1/user/${user._id}`))
+      .then(res => {
+        expect(res.body).toEqual({
+          _id: expect.anything(),
+          name: 'Student',
+          password: '12345',
+          phoneType: 'mobile',
+          phoneNumber: 5035555555,
+          image: 'some.string',
+          __v: 0
+        });
+      });
+  });
 });
