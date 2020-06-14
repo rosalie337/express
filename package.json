@@ -1,5 +1,5 @@
 {
-  "name": "express",
+  "name": "express-lab",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -23,5 +23,9 @@
     "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.18"
+  }
 }
