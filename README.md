@@ -1,35 +1,52 @@
-# LAB: Voting Application - Phase 1
+# LAB: Voting Application - Phase 2
 
-Back-end voting Application. The back-end track organizations, polls, votes, users, and membership.
+I'm building the back-end for a Voting Application. The back-end will track 
+organizations, polls, votes, users, and membership.
 
-## Phase 1 Requirements
+This lab is broken into multiple phases.
 
-For Phase 1 we will concentrate on the `Organization` and `User` model.
+## Phase 2 Requirements
 
-### Organization
+For phase 2 we will concentrate on the `Poll`, `Vote`, and `Membership` model.
 
-Created all CRUD routes for the `Organization` model and `Organization` model will include
-a title, description, and imageUrl.
+## CRUD
 
-[x] create route will be used when a new organization is created
-[x] get all route will be used to see all organizations (_id, title, and imageUrl of organization only)
-[x] get by id route will be used to get details about an organization
-[x] update route will be used to update organization information
-[x] delete route will be used if an organization is disbanded
+### Poll
 
-### User
+Create all CRUD routes for the `Poll` model. The `Poll` model should include a reference to
+an organization, title, description and a list of options.
 
-[x]Created routes for the `User` model. The`User` model should include a name, phone, email, communicationMedium (phone or email), and imageUrl.
+[ ] the create route will be used to create a new poll
+[ ] the get all route will be used to see all polls for an organization (_id and title only)
+[ ] the get by id route will be used to get details about a poll (populate organization information and total votes on poll)
+[ ] the update route will be used to update a polls title and/or description
+[ ] the delete route will be used to remove a poll
 
-[x] get by id route will be used to get details about a user
-[x] update route will be used to update a user
-[x] delete route will be used if a user chooses to leave the platform
+### Vote
+
+Create routes for the `Vote` model. The `Vote` model should include a reference to
+a poll, a reference to a user, and the option selected (as a string).
+
+[ ] the create route will be used to create a new vote
+[ ] get all votes on a poll
+[ ] get all votes by a user
+[ ] the update route will be used to change the voted option
+
+### Membership
+
+Create all CRUD routes for the `Membership` model. The `Membership` model should include a reference to
+an organization and a reference to a user.
+
+[ ] the create route will be used to create a new membership
+[ ] (/api/v1/memberships?org=ORG_ID) the get all route will be used to see all users in an organization (organization: _id, title, imageUrl; user: _id, name, imageUrl)
+[ ] (/api/v1/memberships?user=USER_ID) the get all route will be used to see all organizations a user is part of (organization: _id, title, imageUrl; user: _id, name, imageUrl)
+[ ] the delete route will be used to remove a membership
 
 ## Testing
 
-* `supertest` used to test all routes
+[ ] `supertest` to test all your routes
 
 ## Rubric
 
-* 1 point per route
-* 1 point for clean code
+* 3 point per model and routes
+* 1 points for clean code
