@@ -1,52 +1,32 @@
-# LAB: Voting Application - Phase 2
+# LAB: Voting Application - Phase 3
 
-I'm building the back-end for a Voting Application. The back-end will track 
+I am going to build the back-end for a Voting Application. The back-end track 
 organizations, polls, votes, users, and membership.
 
 This lab is broken into multiple phases.
 
-## Phase 2 Requirements
+## Phase 3 Requirements
 
-For phase 2 we will concentrate on the `Poll`, `Vote`, and `Membership` model.
+fav color:
 
-## CRUD
+[ ] red
+[ ] blue
+[ ] green
 
-### Poll
+## Functionality
 
-Create all CRUD routes for the `Poll` model. The `Poll` model should include a reference to
-an organization, title, description and a list of options.
-
-[ ] the create route will be used to create a new poll
-[ ] the get all route will be used to see all polls for an organization (_id and title only)
-[ ] the get by id route will be used to get details about a poll (populate organization information and total votes on poll)
-[ ] the update route will be used to update a polls title and/or description
-[ ] the delete route will be used to remove a poll
-
-### Vote
-
-Create routes for the `Vote` model. The `Vote` model should include a reference to
-a poll, a reference to a user, and the option selected (as a string).
-
-[ ] the create route will be used to create a new vote
-[ ] get all votes on a poll
-[ ] get all votes by a user
-[ ] the update route will be used to change the voted option
-
-### Membership
-
-Create all CRUD routes for the `Membership` model. The `Membership` model should include a reference to
-an organization and a reference to a user.
-
-[ ] the create route will be used to create a new membership
-[ ] (/api/v1/memberships?org=ORG_ID) the get all route will be used to see all users in an organization (organization: _id, title, imageUrl; user: _id, name, imageUrl)
-[ ] (/api/v1/memberships?user=USER_ID) the get all route will be used to see all organizations a user is part of (organization: _id, title, imageUrl; user: _id, name, imageUrl)
-[ ] the delete route will be used to remove a membership
+[ ] when deleting an organization also delete all polls and votes associated with the organization
+[ ] when deleting a membership also delete all votes made by that member
+[ ] when getting an organization's details also get all members
+[ ] when getting a user's details also get all organizations they are a member of
+[ ] allow a user to vote only once on a poll
+[ ] BONUS: change voting to Instant Runoff Voting (ranked choices)
+[ ] BONUS: when a new poll is added send an email or text message to all users in an organization
 
 ## Testing
 
-[ ] `supertest` to test all your routes
+* `supertest` to test all your routes
 
 ## Rubric
 
-* 3 point per model and routes
-* 1 points for clean code
+* 2 points per functionality
